@@ -1,0 +1,854 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E2C03FE1E6ADDE994DC196D /* Pods_prometheusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78619AAF9E72EB8D8489C4F5 /* Pods_prometheusTests.framework */; };
+		67E63426DDC186F6793270F4 /* Pods_WeatherApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CEC27AB954418009B7B5D9 /* Pods_WeatherApplicationUITests.framework */; };
+		7143C9067A366B8DF78291AC /* Pods_prometheus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34776D744B9F2660F094A20D /* Pods_prometheus.framework */; };
+		739CB62E67E145E9A9363C54 /* Pods_WeatherApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378D7D5BA4463E60CA81DF4C /* Pods_WeatherApplicationTests.framework */; };
+		AC70E89E549BA5611FEA6A17 /* Pods_prometheus_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38079497C4D078A6EB8901E7 /* Pods_prometheus_UITests.framework */; };
+		E512FEDA1FB9272700FD7C05 /* HikeManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512FED91FB9272700FD7C05 /* HikeManagerViewController.swift */; };
+		E5182EE81FAE8F2C00A0E31A /* AddHikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5182EE71FAE8F2C00A0E31A /* AddHikeViewController.swift */; };
+		E5182EEF1FAEA0D900A0E31A /* HikeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5182EEE1FAEA0D900A0E31A /* HikeDetailsController.swift */; };
+		E51D62BD1FAE5E740030E884 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D62BC1FAE5E740030E884 /* DataModels.swift */; };
+		E51D62BF1FAE8AF80030E884 /* DarkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D62BE1FAE8AF80030E884 /* DarkSkyAPI.swift */; };
+		E51D62C11FAE8BC90030E884 /* WeatherUndergroundAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D62C01FAE8BC90030E884 /* WeatherUndergroundAPI.swift */; };
+		E5230B861FAE096D00D6BDB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5230B851FAE096D00D6BDB6 /* AppDelegate.swift */; };
+		E5230B8B1FAE096D00D6BDB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5230B891FAE096D00D6BDB6 /* Main.storyboard */; };
+		E5230B8D1FAE096D00D6BDB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5230B8C1FAE096D00D6BDB6 /* Assets.xcassets */; };
+		E5230B901FAE096D00D6BDB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5230B8E1FAE096D00D6BDB6 /* LaunchScreen.storyboard */; };
+		E5230B9B1FAE096D00D6BDB6 /* WeatherApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5230B9A1FAE096D00D6BDB6 /* WeatherApplicationTests.swift */; };
+		E5230BA61FAE096D00D6BDB6 /* WeatherApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5230BA51FAE096D00D6BDB6 /* WeatherApplicationUITests.swift */; };
+		E5230BB71FAE0A0200D6BDB6 /* OpenWeatherMapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5230BB61FAE0A0200D6BDB6 /* OpenWeatherMapAPI.swift */; };
+		E52FC2951FB1E6EA00628F28 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FC2941FB1E6EA00628F28 /* MapViewController.swift */; };
+		E580F8A11FB8D46700190F82 /* SlidingPanelSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F8A01FB8D46700190F82 /* SlidingPanelSegue.swift */; };
+		E580F8A31FB8EE8000190F82 /* WeatherDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F8A21FB8EE8000190F82 /* WeatherDetailsController.swift */; };
+		E5A334941FB1449F0066C804 /* HikingProjectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A334931FB1449F0066C804 /* HikingProjectAPI.swift */; };
+		E5A334961FB150DC0066C804 /* SelectTrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A334951FB150DC0066C804 /* SelectTrailViewController.swift */; };
+		E5FC64011FB2999500197031 /* MainHikeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC64001FB2999500197031 /* MainHikeDetailsViewController.swift */; };
+		E5FC64031FB29A2C00197031 /* SlidingPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC64021FB29A2C00197031 /* SlidingPanelViewController.swift */; };
+		E5FC64051FB29CBB00197031 /* UIAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC64041FB29CBB00197031 /* UIAdditions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E5230B971FAE096D00D6BDB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5230B7A1FAE096D00D6BDB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5230B811FAE096D00D6BDB6;
+			remoteInfo = WeatherApplication;
+		};
+		E5230BA21FAE096D00D6BDB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5230B7A1FAE096D00D6BDB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5230B811FAE096D00D6BDB6;
+			remoteInfo = WeatherApplication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19CEC27AB954418009B7B5D9 /* Pods_WeatherApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34776D744B9F2660F094A20D /* Pods_prometheus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_prometheus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		375A51AA103785BC114F4251 /* Pods-prometheus UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prometheus UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prometheus UITests/Pods-prometheus UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		378D7D5BA4463E60CA81DF4C /* Pods_WeatherApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38079497C4D078A6EB8901E7 /* Pods_prometheus_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_prometheus_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F764C58F44BE2ABDB35994 /* Pods-prometheus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prometheus.release.xcconfig"; path = "Pods/Target Support Files/Pods-prometheus/Pods-prometheus.release.xcconfig"; sourceTree = "<group>"; };
+		677BC9CE569DB0B7330CDFE1 /* Pods-prometheus UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prometheus UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-prometheus UITests/Pods-prometheus UITests.release.xcconfig"; sourceTree = "<group>"; };
+		78619AAF9E72EB8D8489C4F5 /* Pods_prometheusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_prometheusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A5C0DB6805E16E6EEBA89EF /* Pods_WeatherApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C893D132BEB23E95A75F04F2 /* Pods-prometheus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prometheus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prometheus/Pods-prometheus.debug.xcconfig"; sourceTree = "<group>"; };
+		DC1004AD487E50A013AD78F9 /* Pods-prometheusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prometheusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-prometheusTests/Pods-prometheusTests.release.xcconfig"; sourceTree = "<group>"; };
+		E512FED91FB9272700FD7C05 /* HikeManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeManagerViewController.swift; sourceTree = "<group>"; };
+		E5182EE71FAE8F2C00A0E31A /* AddHikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHikeViewController.swift; sourceTree = "<group>"; };
+		E5182EEE1FAEA0D900A0E31A /* HikeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeDetailsController.swift; sourceTree = "<group>"; };
+		E51D62BC1FAE5E740030E884 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		E51D62BE1FAE8AF80030E884 /* DarkSkyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyAPI.swift; sourceTree = "<group>"; };
+		E51D62C01FAE8BC90030E884 /* WeatherUndergroundAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUndergroundAPI.swift; sourceTree = "<group>"; };
+		E5230B821FAE096D00D6BDB6 /* prometheus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prometheus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5230B851FAE096D00D6BDB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5230B8A1FAE096D00D6BDB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5230B8C1FAE096D00D6BDB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5230B8F1FAE096D00D6BDB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5230B911FAE096D00D6BDB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = prometheus/Info.plist; sourceTree = SOURCE_ROOT; };
+		E5230B961FAE096D00D6BDB6 /* prometheusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = prometheusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5230B9A1FAE096D00D6BDB6 /* WeatherApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApplicationTests.swift; sourceTree = "<group>"; };
+		E5230B9C1FAE096D00D6BDB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5230BA11FAE096D00D6BDB6 /* prometheus UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "prometheus UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5230BA51FAE096D00D6BDB6 /* WeatherApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApplicationUITests.swift; sourceTree = "<group>"; };
+		E5230BA71FAE096D00D6BDB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5230BB61FAE0A0200D6BDB6 /* OpenWeatherMapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapAPI.swift; sourceTree = "<group>"; };
+		E52FC2941FB1E6EA00628F28 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E580F8A01FB8D46700190F82 /* SlidingPanelSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPanelSegue.swift; sourceTree = "<group>"; };
+		E580F8A21FB8EE8000190F82 /* WeatherDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsController.swift; sourceTree = "<group>"; };
+		E5A334931FB1449F0066C804 /* HikingProjectAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingProjectAPI.swift; sourceTree = "<group>"; };
+		E5A334951FB150DC0066C804 /* SelectTrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrailViewController.swift; sourceTree = "<group>"; };
+		E5FC64001FB2999500197031 /* MainHikeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHikeDetailsViewController.swift; sourceTree = "<group>"; };
+		E5FC64021FB29A2C00197031 /* SlidingPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPanelViewController.swift; sourceTree = "<group>"; };
+		E5FC64041FB29CBB00197031 /* UIAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAdditions.swift; sourceTree = "<group>"; };
+		FEA37181A7C7B5D8CDEB62DE /* Pods-prometheusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prometheusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prometheusTests/Pods-prometheusTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5230B7F1FAE096D00D6BDB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7143C9067A366B8DF78291AC /* Pods_prometheus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5230B931FAE096D00D6BDB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				739CB62E67E145E9A9363C54 /* Pods_WeatherApplicationTests.framework in Frameworks */,
+				5E2C03FE1E6ADDE994DC196D /* Pods_prometheusTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5230B9E1FAE096D00D6BDB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E63426DDC186F6793270F4 /* Pods_WeatherApplicationUITests.framework in Frameworks */,
+				AC70E89E549BA5611FEA6A17 /* Pods_prometheus_UITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1633AFD9C2035610588C8C0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C893D132BEB23E95A75F04F2 /* Pods-prometheus.debug.xcconfig */,
+				56F764C58F44BE2ABDB35994 /* Pods-prometheus.release.xcconfig */,
+				375A51AA103785BC114F4251 /* Pods-prometheus UITests.debug.xcconfig */,
+				677BC9CE569DB0B7330CDFE1 /* Pods-prometheus UITests.release.xcconfig */,
+				FEA37181A7C7B5D8CDEB62DE /* Pods-prometheusTests.debug.xcconfig */,
+				DC1004AD487E50A013AD78F9 /* Pods-prometheusTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		667555B2F76433F87C53B02F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A5C0DB6805E16E6EEBA89EF /* Pods_WeatherApplication.framework */,
+				378D7D5BA4463E60CA81DF4C /* Pods_WeatherApplicationTests.framework */,
+				19CEC27AB954418009B7B5D9 /* Pods_WeatherApplicationUITests.framework */,
+				34776D744B9F2660F094A20D /* Pods_prometheus.framework */,
+				38079497C4D078A6EB8901E7 /* Pods_prometheus_UITests.framework */,
+				78619AAF9E72EB8D8489C4F5 /* Pods_prometheusTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E512FED71FB9222500FD7C05 /* Add Hike */ = {
+			isa = PBXGroup;
+			children = (
+				E5182EE71FAE8F2C00A0E31A /* AddHikeViewController.swift */,
+				E5A334951FB150DC0066C804 /* SelectTrailViewController.swift */,
+			);
+			name = "Add Hike";
+			sourceTree = "<group>";
+		};
+		E512FED81FB9224600FD7C05 /* Hike Details */ = {
+			isa = PBXGroup;
+			children = (
+				E580F8A01FB8D46700190F82 /* SlidingPanelSegue.swift */,
+				E5FC64021FB29A2C00197031 /* SlidingPanelViewController.swift */,
+				E5FC64001FB2999500197031 /* MainHikeDetailsViewController.swift */,
+				E52FC2941FB1E6EA00628F28 /* MapViewController.swift */,
+				E5182EEE1FAEA0D900A0E31A /* HikeDetailsController.swift */,
+				E580F8A21FB8EE8000190F82 /* WeatherDetailsController.swift */,
+			);
+			name = "Hike Details";
+			sourceTree = "<group>";
+		};
+		E5182EEB1FAE985800A0E31A /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Trash;
+			sourceTree = "<group>";
+		};
+		E5230B791FAE096D00D6BDB6 = {
+			isa = PBXGroup;
+			children = (
+				E5230B841FAE096D00D6BDB6 /* prometheus */,
+				E5230B991FAE096D00D6BDB6 /* prometheusTests */,
+				E5230BA41FAE096D00D6BDB6 /* prometheusUITests */,
+				E5230B831FAE096D00D6BDB6 /* Products */,
+				1633AFD9C2035610588C8C0D /* Pods */,
+				667555B2F76433F87C53B02F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E5230B831FAE096D00D6BDB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5230B821FAE096D00D6BDB6 /* prometheus.app */,
+				E5230B961FAE096D00D6BDB6 /* prometheusTests.xctest */,
+				E5230BA11FAE096D00D6BDB6 /* prometheus UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5230B841FAE096D00D6BDB6 /* prometheus */ = {
+			isa = PBXGroup;
+			children = (
+				E5230B8C1FAE096D00D6BDB6 /* Assets.xcassets */,
+				E5230B8E1FAE096D00D6BDB6 /* LaunchScreen.storyboard */,
+				E5230B891FAE096D00D6BDB6 /* Main.storyboard */,
+				E5230B851FAE096D00D6BDB6 /* AppDelegate.swift */,
+				E512FED91FB9272700FD7C05 /* HikeManagerViewController.swift */,
+				E512FED71FB9222500FD7C05 /* Add Hike */,
+				E512FED81FB9224600FD7C05 /* Hike Details */,
+				E5230BB41FAE09AD00D6BDB6 /* Utility */,
+				E5230BB31FAE09A600D6BDB6 /* Data Models */,
+				E5230BB51FAE09B600D6BDB6 /* Supporting files */,
+				E5182EEB1FAE985800A0E31A /* Trash */,
+			);
+			path = prometheus;
+			sourceTree = "<group>";
+		};
+		E5230B991FAE096D00D6BDB6 /* prometheusTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5230B9A1FAE096D00D6BDB6 /* WeatherApplicationTests.swift */,
+				E5230B9C1FAE096D00D6BDB6 /* Info.plist */,
+			);
+			path = prometheusTests;
+			sourceTree = "<group>";
+		};
+		E5230BA41FAE096D00D6BDB6 /* prometheusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E5230BA51FAE096D00D6BDB6 /* WeatherApplicationUITests.swift */,
+				E5230BA71FAE096D00D6BDB6 /* Info.plist */,
+			);
+			path = prometheusUITests;
+			sourceTree = "<group>";
+		};
+		E5230BB31FAE09A600D6BDB6 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				E51D62BC1FAE5E740030E884 /* DataModels.swift */,
+			);
+			name = "Data Models";
+			sourceTree = "<group>";
+		};
+		E5230BB41FAE09AD00D6BDB6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E5230BB61FAE0A0200D6BDB6 /* OpenWeatherMapAPI.swift */,
+				E5A334931FB1449F0066C804 /* HikingProjectAPI.swift */,
+				E51D62BE1FAE8AF80030E884 /* DarkSkyAPI.swift */,
+				E51D62C01FAE8BC90030E884 /* WeatherUndergroundAPI.swift */,
+				E5FC64041FB29CBB00197031 /* UIAdditions.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		E5230BB51FAE09B600D6BDB6 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				E5230B911FAE096D00D6BDB6 /* Info.plist */,
+			);
+			name = "Supporting files";
+			path = "../../../../../../../../Box Sync/Projects/GitHub/WeatherApplication/prometheus";
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5230B811FAE096D00D6BDB6 /* prometheus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5230BAA1FAE096D00D6BDB6 /* Build configuration list for PBXNativeTarget "prometheus" */;
+			buildPhases = (
+				0B66C6E6B24733C679D8E58D /* [CP] Check Pods Manifest.lock */,
+				E5230B7E1FAE096D00D6BDB6 /* Sources */,
+				E5230B7F1FAE096D00D6BDB6 /* Frameworks */,
+				E5230B801FAE096D00D6BDB6 /* Resources */,
+				605955A85057B54C0B4ED6E6 /* [CP] Embed Pods Frameworks */,
+				E9C197C764F3682F60DABE41 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = prometheus;
+			productName = WeatherApplication;
+			productReference = E5230B821FAE096D00D6BDB6 /* prometheus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E5230B951FAE096D00D6BDB6 /* prometheusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5230BAD1FAE096D00D6BDB6 /* Build configuration list for PBXNativeTarget "prometheusTests" */;
+			buildPhases = (
+				60CD0D7071FD41758C1B47C0 /* [CP] Check Pods Manifest.lock */,
+				E5230B921FAE096D00D6BDB6 /* Sources */,
+				E5230B931FAE096D00D6BDB6 /* Frameworks */,
+				E5230B941FAE096D00D6BDB6 /* Resources */,
+				5FB631C7D0F0CF8DB6EBF5AA /* [CP] Embed Pods Frameworks */,
+				659030B5E6E3D3245FB33F60 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5230B981FAE096D00D6BDB6 /* PBXTargetDependency */,
+			);
+			name = prometheusTests;
+			productName = WeatherApplicationTests;
+			productReference = E5230B961FAE096D00D6BDB6 /* prometheusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E5230BA01FAE096D00D6BDB6 /* prometheus UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5230BB01FAE096D00D6BDB6 /* Build configuration list for PBXNativeTarget "prometheus UITests" */;
+			buildPhases = (
+				9E0AFDDE2B29A65FFD927E10 /* [CP] Check Pods Manifest.lock */,
+				E5230B9D1FAE096D00D6BDB6 /* Sources */,
+				E5230B9E1FAE096D00D6BDB6 /* Frameworks */,
+				E5230B9F1FAE096D00D6BDB6 /* Resources */,
+				D29D38A937C8AB015CE6B670 /* [CP] Embed Pods Frameworks */,
+				0882FB3D6F0082837AA73F9C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5230BA31FAE096D00D6BDB6 /* PBXTargetDependency */,
+			);
+			name = "prometheus UITests";
+			productName = WeatherApplicationUITests;
+			productReference = E5230BA11FAE096D00D6BDB6 /* prometheus UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5230B7A1FAE096D00D6BDB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = JoelWhitney;
+				TargetAttributes = {
+					E5230B811FAE096D00D6BDB6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5SREPW8963;
+						ProvisioningStyle = Automatic;
+					};
+					E5230B951FAE096D00D6BDB6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5SREPW8963;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E5230B811FAE096D00D6BDB6;
+					};
+					E5230BA01FAE096D00D6BDB6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5SREPW8963;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E5230B811FAE096D00D6BDB6;
+					};
+				};
+			};
+			buildConfigurationList = E5230B7D1FAE096D00D6BDB6 /* Build configuration list for PBXProject "prometheus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5230B791FAE096D00D6BDB6;
+			productRefGroup = E5230B831FAE096D00D6BDB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5230B811FAE096D00D6BDB6 /* prometheus */,
+				E5230B951FAE096D00D6BDB6 /* prometheusTests */,
+				E5230BA01FAE096D00D6BDB6 /* prometheus UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5230B801FAE096D00D6BDB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5230B901FAE096D00D6BDB6 /* LaunchScreen.storyboard in Resources */,
+				E5230B8D1FAE096D00D6BDB6 /* Assets.xcassets in Resources */,
+				E5230B8B1FAE096D00D6BDB6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5230B941FAE096D00D6BDB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5230B9F1FAE096D00D6BDB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0882FB3D6F0082837AA73F9C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-prometheus UITests/Pods-prometheus UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0B66C6E6B24733C679D8E58D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5FB631C7D0F0CF8DB6EBF5AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-prometheusTests/Pods-prometheusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		605955A85057B54C0B4ED6E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-prometheus/Pods-prometheus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60CD0D7071FD41758C1B47C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		659030B5E6E3D3245FB33F60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-prometheusTests/Pods-prometheusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E0AFDDE2B29A65FFD927E10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D29D38A937C8AB015CE6B670 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-prometheus UITests/Pods-prometheus UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9C197C764F3682F60DABE41 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-prometheus/Pods-prometheus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5230B7E1FAE096D00D6BDB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52FC2951FB1E6EA00628F28 /* MapViewController.swift in Sources */,
+				E5A334941FB1449F0066C804 /* HikingProjectAPI.swift in Sources */,
+				E51D62BD1FAE5E740030E884 /* DataModels.swift in Sources */,
+				E5A334961FB150DC0066C804 /* SelectTrailViewController.swift in Sources */,
+				E5FC64011FB2999500197031 /* MainHikeDetailsViewController.swift in Sources */,
+				E512FEDA1FB9272700FD7C05 /* HikeManagerViewController.swift in Sources */,
+				E5230B861FAE096D00D6BDB6 /* AppDelegate.swift in Sources */,
+				E5FC64051FB29CBB00197031 /* UIAdditions.swift in Sources */,
+				E51D62C11FAE8BC90030E884 /* WeatherUndergroundAPI.swift in Sources */,
+				E51D62BF1FAE8AF80030E884 /* DarkSkyAPI.swift in Sources */,
+				E5182EEF1FAEA0D900A0E31A /* HikeDetailsController.swift in Sources */,
+				E5182EE81FAE8F2C00A0E31A /* AddHikeViewController.swift in Sources */,
+				E5FC64031FB29A2C00197031 /* SlidingPanelViewController.swift in Sources */,
+				E5230BB71FAE0A0200D6BDB6 /* OpenWeatherMapAPI.swift in Sources */,
+				E580F8A31FB8EE8000190F82 /* WeatherDetailsController.swift in Sources */,
+				E580F8A11FB8D46700190F82 /* SlidingPanelSegue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5230B921FAE096D00D6BDB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5230B9B1FAE096D00D6BDB6 /* WeatherApplicationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5230B9D1FAE096D00D6BDB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5230BA61FAE096D00D6BDB6 /* WeatherApplicationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5230B981FAE096D00D6BDB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5230B811FAE096D00D6BDB6 /* prometheus */;
+			targetProxy = E5230B971FAE096D00D6BDB6 /* PBXContainerItemProxy */;
+		};
+		E5230BA31FAE096D00D6BDB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5230B811FAE096D00D6BDB6 /* prometheus */;
+			targetProxy = E5230BA21FAE096D00D6BDB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E5230B891FAE096D00D6BDB6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5230B8A1FAE096D00D6BDB6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E5230B8E1FAE096D00D6BDB6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5230B8F1FAE096D00D6BDB6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E5230BA81FAE096D00D6BDB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = prometheus;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = prometheus;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E5230BA91FAE096D00D6BDB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = prometheus;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = prometheus;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5230BAB1FAE096D00D6BDB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C893D132BEB23E95A75F04F2 /* Pods-prometheus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5SREPW8963;
+				INFOPLIST_FILE = prometheus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JoelWhitney.-prometheus";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E5230BAC1FAE096D00D6BDB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56F764C58F44BE2ABDB35994 /* Pods-prometheus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5SREPW8963;
+				INFOPLIST_FILE = prometheus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JoelWhitney.-prometheus";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E5230BAE1FAE096D00D6BDB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEA37181A7C7B5D8CDEB62DE /* Pods-prometheusTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5SREPW8963;
+				INFOPLIST_FILE = WeatherApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoelWhitney.WeatherApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApplication.app/WeatherApplication";
+			};
+			name = Debug;
+		};
+		E5230BAF1FAE096D00D6BDB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC1004AD487E50A013AD78F9 /* Pods-prometheusTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5SREPW8963;
+				INFOPLIST_FILE = WeatherApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoelWhitney.WeatherApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApplication.app/WeatherApplication";
+			};
+			name = Release;
+		};
+		E5230BB11FAE096D00D6BDB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 375A51AA103785BC114F4251 /* Pods-prometheus UITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5SREPW8963;
+				INFOPLIST_FILE = prometheusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoelWhitney.prometheusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WeatherApplication;
+			};
+			name = Debug;
+		};
+		E5230BB21FAE096D00D6BDB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 677BC9CE569DB0B7330CDFE1 /* Pods-prometheus UITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5SREPW8963;
+				INFOPLIST_FILE = prometheusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoelWhitney.prometheusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WeatherApplication;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5230B7D1FAE096D00D6BDB6 /* Build configuration list for PBXProject "prometheus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5230BA81FAE096D00D6BDB6 /* Debug */,
+				E5230BA91FAE096D00D6BDB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5230BAA1FAE096D00D6BDB6 /* Build configuration list for PBXNativeTarget "prometheus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5230BAB1FAE096D00D6BDB6 /* Debug */,
+				E5230BAC1FAE096D00D6BDB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5230BAD1FAE096D00D6BDB6 /* Build configuration list for PBXNativeTarget "prometheusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5230BAE1FAE096D00D6BDB6 /* Debug */,
+				E5230BAF1FAE096D00D6BDB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5230BB01FAE096D00D6BDB6 /* Build configuration list for PBXNativeTarget "prometheus UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5230BB11FAE096D00D6BDB6 /* Debug */,
+				E5230BB21FAE096D00D6BDB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5230B7A1FAE096D00D6BDB6 /* Project object */;
+}

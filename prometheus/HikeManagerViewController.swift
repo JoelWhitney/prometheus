@@ -9,13 +9,12 @@
 import Foundation
 import UIKit
 
-class HikeManagerViewController: UIViewController {
-    var filterHandler: ((String?) -> Void)?
-    var hikes: [Hike] = [] {
-        didSet {
-            applyFilter()
-        }
+class HikeManagerViewController: UIViewController, isAbleToPassNewHike {
+    var hikeStore: HikeStore {
+        let navController = self.navigationController as? NavigationController
+        return navController!.hikeStore
     }
+    var filterHandler: ((String?) -> Void)?
     var filteredHikes: [Hike] = [] {
         didSet {
             print("filtered results")
@@ -31,36 +30,37 @@ class HikeManagerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchHikes()
-        addHikeViewController?.createdHike = { hike in
-            self.addHike(hike: hike)
-        }
     }
     
-    var addHikeViewController: AddHikeViewController? {
-        return childViewControllers.first(where: { $0 is AddHikeViewController }) as? AddHikeViewController
-    }
-    
-    func fetchHikes() {
-        // retrieve hikes or create empty hikes
-        hikes = []
-    }
-    
-    func addHike(hike: Hike) {
-        hikes.append(hike)
-        print(hikes)
+
+    func passHike(hike: Hike) {
+        print("received hike")
+        hikeStore.addHike(hike: hike)
         applyFilter()
     }
         
     func applyFilter() {
-        guard let searchText = searchBar.text?.lowercased(), !searchText.isEmpty, hikes.count > 0 else {
-            filteredHikes = hikes.sorted(by: { $0.trail.name < $1.trail.name })
+        guard let searchText = searchBar.text?.lowercased(), !searchText.isEmpty, hikeStore.hikes.count > 0 else {
+            filteredHikes = hikeStore.hikes.sorted(by: { $0.trail.name < $1.trail.name })
             filterHandler?(nil)
             return
         }
-        filteredHikes = hikes.filter { $0.trail.name.lowercased().contains(searchText)}
+        filteredHikes = hikeStore.hikes.filter { $0.trail.name.lowercased().contains(searchText)}
             .sorted(by: { $0.trail.name < $1.trail.name })
         filterHandler?(searchText)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "AddHikeViewController") {
+            print("added passhike delegate to vc")
+            let destController = segue.destination.childViewControllers.first(where: { $0 is AddHikeViewController }) as? AddHikeViewController
+            destController!.delegate = self
+            //present(destController, animated: true)
+        }
+        if let destController = segue.destination as? MainHikeDetailsViewController {
+            print(selectedHike)
+            destController.hike = selectedHike
+        }
     }
 }
 
@@ -90,8 +90,10 @@ extension HikeManagerViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedHike = filteredHikes[indexPath.row]
+        print(selectedHike)
         tableView.deselectRow(at: indexPath, animated: true)
         searchBar.resignFirstResponder()
+        self.performSegue(withIdentifier: "HikeDetailsViewController", sender: self)
     }
     
 }
@@ -119,6 +121,10 @@ extension HikeManagerViewController: UISearchBarDelegate {
         searchBar.becomeFirstResponder()
     }
     
+}
+
+protocol isAbleToPassNewHike {
+    func passHike(hike: Hike)
 }
 
 class HikeSummaryCell: UITableViewCell {

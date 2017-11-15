@@ -26,6 +26,7 @@
 		E5230BA61FAE096D00D6BDB6 /* WeatherApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5230BA51FAE096D00D6BDB6 /* WeatherApplicationUITests.swift */; };
 		E5230BB71FAE0A0200D6BDB6 /* OpenWeatherMapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5230BB61FAE0A0200D6BDB6 /* OpenWeatherMapAPI.swift */; };
 		E52FC2951FB1E6EA00628F28 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FC2941FB1E6EA00628F28 /* MapViewController.swift */; };
+		E53123B31FBBCEBC002B054D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53123B21FBBCEBC002B054D /* NavigationController.swift */; };
 		E580F8A11FB8D46700190F82 /* SlidingPanelSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F8A01FB8D46700190F82 /* SlidingPanelSegue.swift */; };
 		E580F8A31FB8EE8000190F82 /* WeatherDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F8A21FB8EE8000190F82 /* WeatherDetailsController.swift */; };
 		E5A334941FB1449F0066C804 /* HikingProjectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A334931FB1449F0066C804 /* HikingProjectAPI.swift */; };
@@ -84,6 +85,7 @@
 		E5230BA71FAE096D00D6BDB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5230BB61FAE0A0200D6BDB6 /* OpenWeatherMapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapAPI.swift; sourceTree = "<group>"; };
 		E52FC2941FB1E6EA00628F28 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E53123B21FBBCEBC002B054D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E580F8A01FB8D46700190F82 /* SlidingPanelSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPanelSegue.swift; sourceTree = "<group>"; };
 		E580F8A21FB8EE8000190F82 /* WeatherDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsController.swift; sourceTree = "<group>"; };
 		E5A334931FB1449F0066C804 /* HikingProjectAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingProjectAPI.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				E5230B8E1FAE096D00D6BDB6 /* LaunchScreen.storyboard */,
 				E5230B891FAE096D00D6BDB6 /* Main.storyboard */,
 				E5230B851FAE096D00D6BDB6 /* AppDelegate.swift */,
+				E53123B21FBBCEBC002B054D /* NavigationController.swift */,
 				E512FED91FB9272700FD7C05 /* HikeManagerViewController.swift */,
 				E512FED71FB9222500FD7C05 /* Add Hike */,
 				E512FED81FB9224600FD7C05 /* Hike Details */,
@@ -555,6 +558,7 @@
 				E51D62BD1FAE5E740030E884 /* DataModels.swift in Sources */,
 				E5A334961FB150DC0066C804 /* SelectTrailViewController.swift in Sources */,
 				E5FC64011FB2999500197031 /* MainHikeDetailsViewController.swift in Sources */,
+				E53123B31FBBCEBC002B054D /* NavigationController.swift in Sources */,
 				E512FEDA1FB9272700FD7C05 /* HikeManagerViewController.swift in Sources */,
 				E5230B861FAE096D00D6BDB6 /* AppDelegate.swift in Sources */,
 				E5FC64051FB29CBB00197031 /* UIAdditions.swift in Sources */,

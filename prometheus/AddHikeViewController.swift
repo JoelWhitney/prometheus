@@ -12,7 +12,7 @@ import UIKit
 import GooglePlaces
 
 class AddHikeViewController: UITableViewController {
-    var googlePlace: GMSPlace! {
+    var place: Place! {
         didSet {
             print("set place")
             populateDetails()
@@ -29,8 +29,8 @@ class AddHikeViewController: UITableViewController {
     var showStartDatePicker = false
     var showEndDatePicker = false
     let locationManager = CLLocationManager()
-    var createdHike: ((Hike) -> ())?
-
+    var delegate: isAbleToPassNewHike!
+    
     @IBOutlet var createButton: UIButton!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet weak var trailLabel: UILabel!
@@ -48,8 +48,9 @@ class AddHikeViewController: UITableViewController {
     }
     
     @IBAction func createHike () {
-        let hike = Hike(place: googlePlace!, trail: selectedTrail!, start: startDate, end: endDate!)
-        self.createdHike?(hike)
+        print("hike createD")
+        let hike = Hike(place: place, trail: selectedTrail!, start: startDate, end: endDate!)
+        delegate.passHike(hike: hike)
         dismiss(animated: true, completion: nil)
     }
     
@@ -78,11 +79,11 @@ class AddHikeViewController: UITableViewController {
     }
     
     func requirementsMet() -> Bool {
-        return googlePlace != nil
+        return place != nil
     }
     
     func populateDetails() {
-        if let placeName = googlePlace?.name {
+        if let placeName = place?.name {
             print("place is googleplace")
             locationLabel.text = placeName
         } else {
@@ -162,13 +163,8 @@ class AddHikeViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let mainHikeVC = segue.destination as? MainHikeDetailsViewController {
-//            let currentHike = Hike(place: googlePlace!, trail: selectedTrail!, start: startDate, end: endDate!)
-//            mainHikeVC.hike = currentHike
-//            print(mainHikeVC.hike)
-//        }
         if let destController = segue.destination as? SelectTrailViewController {
-            destController.currentPlace = googlePlace
+            destController.currentPlace = place
         }
     }
     
@@ -222,7 +218,7 @@ extension AddHikeViewController: GMSAutocompleteViewControllerDelegate {
         print("Place address: \(place.formattedAddress)")
         print("Place attributions: \(place.attributions)")
         print("Place coordinates: \(place.coordinate)")
-        self.googlePlace = place
+        self.place = Place(place)
         dismiss(animated: true, completion: nil)
     }
     

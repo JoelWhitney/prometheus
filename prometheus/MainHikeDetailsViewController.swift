@@ -15,6 +15,7 @@ class MainHikeDetailsViewController: SlidingPanelViewController {
     var hike: Hike? {
         didSet {
             print("mhdVC hike set")
+            print(hike!)
         }
     }
     

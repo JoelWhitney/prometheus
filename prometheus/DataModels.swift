@@ -11,40 +11,112 @@ import SwiftyJSON
 import GooglePlaces
 import Mapbox
 import ArcGIS
+import UIKit
 
-class City {
-    let id: Int
+class Place: NSObject {
+    let id: String
     let name: String
-    let country_code: String
-    let coord: [String: Double]
+    let address: String
+    let coordinate: CLLocationCoordinate2D
     
-    
-    init(cityJSON: JSON) {
-        self.id = cityJSON["id"].int ?? 0
-        self.name = cityJSON["name"].string ?? ""
-        self.country_code = cityJSON["country"].string ?? ""
-        self.coord = ["lon": cityJSON["coord"]["lon"].double!, "lat": cityJSON["coord"]["lat"].double!]
+    init(_ place: GMSPlace) {
+        self.id = place.placeID
+        self.name = place.name
+        self.address = place.formattedAddress ?? ""
+        self.coordinate = place.coordinate
+        super.init()
     }
 }
 
-class Hike {
-    let place: GMSPlace
+class HikeStore {
+    // MARK: - variables/constants
+    var hikes = [Hike]()
+    let hikeArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("hikes.archive")
+    }()
+    
+    // MARK: - initializers
+    init() {
+        if let archivedHikes = NSKeyedUnarchiver.unarchiveObject(withFile: hikeArchiveURL.path) as? [Hike] {
+            print("Retrieving data from File System")
+            hikes = archivedHikes
+        }
+        print(hikes)
+    }
+    
+    // MARK: - class methods
+    func removeHike(hike: Hike) {
+        if let index = hikes.index(of: hike) {
+            hikes.remove(at: index)
+            print("hike removed from itemStore")
+        }
+        saveChanges()
+    }
+    
+    func removeHike(_ item: Hike) {
+        if let index = hikes.index(of: item) {
+            hikes.remove(at: index)
+            print("Item removed from itemStore")
+        }
+        saveChanges()
+    }
+    
+    func removeAllHikes() {
+        hikes = [Hike]()
+        saveChanges()
+    }
+    
+    func addHike(hike: Hike) {
+        print("Adding \(hike) to URLItemStore")
+        hikes.insert(hike, at: 0)
+        saveChanges()
+    }
+    
+    func saveChanges() -> Bool {
+        print("Saving items to: \(hikeArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(hikes, toFile: hikeArchiveURL.path)
+    }
+}
+
+class Hike: NSObject, NSCoding {
+    let hikeKey: String
+    let place: Place
     let start: Date
     let end: Date
     var trail: Trail
     
-    init(place: GMSPlace, trail: Trail, start: Date, end: Date) {
+    init(place: Place, trail: Trail, start: Date, end: Date) {
+        self.hikeKey = UUID().uuidString
         self.place = place
         self.trail = trail
         self.start = start
         self.end = end
     }
+    
+    required init(coder aDecoder: NSCoder) {
+        hikeKey = aDecoder.decodeObject(forKey: "hikeKey") as! String
+        place = aDecoder.decodeObject(forKey: "place") as! Place
+        start = aDecoder.decodeObject(forKey: "start") as! Date
+        end = aDecoder.decodeObject(forKey: "end") as! Date
+        trail = aDecoder.decodeObject(forKey: "trail") as! Trail
+        super.init()
+        
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(hikeKey, forKey: "hikeKey")
+        aCoder.encode(place, forKey: "place")
+        aCoder.encode(start, forKey: "start")
+        aCoder.encode(end, forKey: "end")
+        aCoder.encode(trail, forKey: "trail")
+    }
 }
 
-class Trail {
+class Trail: NSObject {
     // initial api call details
     var name: String
-
     var id: Int?
     var type: String?
     var summary: String?
@@ -63,7 +135,7 @@ class Trail {
     var startPoint: MGLPointAnnotation?
     var endPoint: MGLPointAnnotation?
     var restrictions: String?
-    var description: String?
+    var descrip: String?
     var coordinateBounds: MGLCoordinateBounds?
     var xMax: Double?
     var xMin: Double?
@@ -87,17 +159,19 @@ class Trail {
         self.low = trailJSON["low"].double
         self.longitude = trailJSON["longitude"].double
         self.latitude = trailJSON["latitude"].double
+        super.init()
     }
     
     init(name: String) {
         self.name = name
+        super.init()
     }
     
     func updateTrailDetails(trailJSON: JSON, onCompletion: () -> Void) {
         self.trail = returnTrailGeometry(trailGeometryString: trailJSON["points"].string!)
         self.trail?.title = self.difficulty
         self.restrictions = trailJSON["restrictions"].string
-        self.description = trailJSON["description"].string
+        self.descrip = trailJSON["description"].string
         self.gradeAvg = trailJSON["gradeAvg"].double
         self.gradeMax = trailJSON["gradeMax"].double
         // bounding box

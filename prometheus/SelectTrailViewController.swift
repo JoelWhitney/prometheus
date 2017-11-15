@@ -17,7 +17,7 @@ class SelectTrailViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     // MARK: - Variables
-    var currentPlace: GMSPlace!
+    var currentPlace: Place!
     var filterHandler: ((String?) -> Void)?
     private var trails: [Trail] = [] {
         didSet {

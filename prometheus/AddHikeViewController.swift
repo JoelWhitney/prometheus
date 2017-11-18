@@ -29,7 +29,7 @@ class AddHikeViewController: UITableViewController {
     var showStartDatePicker = false
     var showEndDatePicker = false
     let locationManager = CLLocationManager()
-    var createdHike: ((Hike) -> ())?
+    var delegate: isAbleToPassNewHike!
 
     @IBOutlet var createButton: UIButton!
     @IBOutlet var locationLabel: UILabel!
@@ -48,8 +48,9 @@ class AddHikeViewController: UITableViewController {
     }
     
     @IBAction func createHike () {
-        let hike = Hike(place: googlePlace!, trail: selectedTrail!, start: startDate, end: endDate!)
-        self.createdHike?(hike)
+        print("hike createD")
+        let hike = Hike(place: googlePlace, trail: selectedTrail!, start: startDate, end: endDate!)
+        delegate.passHike(hike: hike)
         dismiss(animated: true, completion: nil)
     }
     

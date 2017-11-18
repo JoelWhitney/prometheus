@@ -109,7 +109,7 @@ extension HikeDetailsController: UITableViewDataSource {
         if indexPath.row == 0 {
             // weather
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableCell", for: indexPath) as! WeatherTableCell
-            cell.weatherIcon.downloadedFrom(link: "http://openweathermap.org/img/w/\(String(describing: currentWeather?.weatherIcon)).png")
+            cell.weatherIcon.downloadedFrom(link: "https://openweathermap.org/img/w/\(String(describing: currentWeather?.weatherIcon)).png")
             cell.currentTemp.text = String(describing: currentWeather?.temperature) + "°"
             cell.currentTempRange.text = "\(String(describing: currentWeather?.tempatureMin)) ° / \(String(describing: currentWeather?.temperatureMax))°"
             cell.currentWeatherDesc.text = currentWeather?.weatherDescription

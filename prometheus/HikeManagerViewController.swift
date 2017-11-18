@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HikeManagerViewController: UIViewController {
+class HikeManagerViewController: UIViewController, isAbleToPassNewHike {
     var filterHandler: ((String?) -> Void)?
     var hikes: [Hike] = [] {
         didSet {
@@ -31,15 +31,13 @@ class HikeManagerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchHikes()
-        addHikeViewController?.createdHike = { hike in
-            print("new hike coming in")
-            self.addHike(hike: hike)
-        }
+        //fetchHikes()
     }
     
-    var addHikeViewController: AddHikeViewController? {
-        return childViewControllers.first(where: { $0 is AddHikeViewController }) as? AddHikeViewController
+    func passHike(hike: Hike) {
+        print("received hike")
+        hikes.append(hike)
+        applyFilter()
     }
     
     func fetchHikes() {
@@ -62,6 +60,18 @@ class HikeManagerViewController: UIViewController {
         filteredHikes = hikes.filter { $0.trail.name.lowercased().contains(searchText)}
             .sorted(by: { $0.trail.name < $1.trail.name })
         filterHandler?(searchText)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "AddHikeViewController") {
+            print("added passhike delegate to vc")
+            let destController = segue.destination.childViewControllers.first(where: { $0 is AddHikeViewController }) as? AddHikeViewController
+            destController!.delegate = self
+        }
+        if let destController = segue.destination as? MainHikeDetailsViewController {
+            print(selectedHike)
+            destController.hike = selectedHike
+        }
     }
 }
 
@@ -120,6 +130,10 @@ extension HikeManagerViewController: UISearchBarDelegate {
         searchBar.becomeFirstResponder()
     }
     
+}
+
+protocol isAbleToPassNewHike {
+    func passHike(hike: Hike)
 }
 
 class HikeSummaryCell: UITableViewCell {

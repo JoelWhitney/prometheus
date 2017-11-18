@@ -33,6 +33,7 @@ class HikeManagerViewController: UIViewController {
         super.viewDidLoad()
         fetchHikes()
         addHikeViewController?.createdHike = { hike in
+            print("new hike coming in")
             self.addHike(hike: hike)
         }
     }

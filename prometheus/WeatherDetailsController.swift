@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 
 class WeatherDetailsController: UIViewController {
-    var currentWeather: JSON!
+    var currentWeather: CurrentWeather!
     @IBOutlet weak var currentWeatherTextView: UITextView!
     
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class WeatherDetailsController: UIViewController {
         guard let weather = currentWeather else {
             return
         }
-        currentWeatherTextView.text = weather.description
+        currentWeatherTextView.text = currentWeather.weatherDescription
     }
     
     @IBAction func close(_ sender: Any) {

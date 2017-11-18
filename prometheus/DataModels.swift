@@ -12,18 +12,42 @@ import GooglePlaces
 import Mapbox
 import ArcGIS
 
-class City {
-    let id: Int
-    let name: String
-    let country_code: String
-    let coord: [String: Double]
+class CurrentWeather {
+    let sunrise: Double
+    let sunset: Double
+    let weatherMain: String
+    let weatherDescription: String
+    let weatherIcon: String
+    let temperature: Double
+    let humidity: Double
+    let pressure: Double
+    let tempatureMin: Double
+    let temperatureMax: Double
+    let windSpeed: Double
+    let windDirection: Double
+    let rain3h: Double
+    let cloudCoverage: Double
+    let weatherCity: String
+    let weatherTime: Double
     
-    
-    init(cityJSON: JSON) {
-        self.id = cityJSON["id"].int ?? 0
-        self.name = cityJSON["name"].string ?? ""
-        self.country_code = cityJSON["country"].string ?? ""
-        self.coord = ["lon": cityJSON["coord"]["lon"].double!, "lat": cityJSON["coord"]["lat"].double!]
+    init(_ currentWeatherJSON: JSON) {
+        self.sunrise = currentWeatherJSON["sys"]["sunrise"].double!
+        self.sunset = currentWeatherJSON["sys"]["sunset"].double!
+        self.weatherMain = currentWeatherJSON["weather"][0]["main"].string!
+        self.weatherDescription = currentWeatherJSON["weather"][0]["description"].string!
+        self.weatherIcon = currentWeatherJSON["weather"][0]["icon"].string!
+        self.temperature = currentWeatherJSON["main"]["temp"].double!
+        self.humidity = currentWeatherJSON["main"]["humidity"].double!
+        self.pressure = currentWeatherJSON["main"]["pressure"].double!
+        self.tempatureMin = currentWeatherJSON["main"]["temp_min"].double!
+        self.temperatureMax = currentWeatherJSON["main"]["temp_max"].double!
+        self.windSpeed = currentWeatherJSON["wind"]["speed"].double!
+        self.windDirection = currentWeatherJSON["wind"]["deg"].double!
+        self.rain3h = currentWeatherJSON["rain"]["3h"].double!
+        self.cloudCoverage = currentWeatherJSON["clouds"]["all"].double!
+        self.weatherCity = currentWeatherJSON["name"].string!
+        self.weatherTime = currentWeatherJSON["dt"].double!
+        
     }
 }
 

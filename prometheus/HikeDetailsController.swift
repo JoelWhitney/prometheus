@@ -22,7 +22,7 @@ class HikeDetailsController: UIViewController, SlidingPanelContentProvider {
             getWeather()
         }
     }
-    var currentWeather: JSON? {
+    var currentWeather: CurrentWeather? {
         didSet {
             DispatchQueue.main.async {
                 self.populateHeaderDetails()
@@ -55,8 +55,8 @@ class HikeDetailsController: UIViewController, SlidingPanelContentProvider {
     }
 
     func getWeather() {
-        OpenWeatherMapAPI.sharedInstance.current_latlon_weather(lat: (hike?.place.coordinate.latitude)!, lon: (hike?.place.coordinate.longitude)!, onCompletion: { (json: JSON) in
-            self.currentWeather = json
+        OpenWeatherMapAPI.sharedInstance.current_latlon_weather(lat: (hike?.place.coordinate.latitude)!, lon: (hike?.place.coordinate.longitude)!, onCompletion: { (currentWeatherJSON: JSON) in
+            self.currentWeather = CurrentWeather(currentWeatherJSON)
         })
         OpenWeatherMapAPI.sharedInstance.forecast5_latlon_weather(lat: (hike?.place.coordinate.latitude)!, lon: (hike?.place.coordinate.longitude)!, onCompletion: { (json: JSON) in
             self.forecastWeather = json
@@ -109,6 +109,10 @@ extension HikeDetailsController: UITableViewDataSource {
         if indexPath.row == 0 {
             // weather
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableCell", for: indexPath) as! WeatherTableCell
+            cell.weatherIcon.downloadedFrom(link: "http://openweathermap.org/img/w/\(String(describing: currentWeather?.weatherIcon)).png")
+            cell.currentTemp.text = String(describing: currentWeather?.temperature) + "°"
+            cell.currentTempRange.text = "\(String(describing: currentWeather?.tempatureMin)) ° / \(String(describing: currentWeather?.temperatureMax))°"
+            cell.currentWeatherDesc.text = currentWeather?.weatherDescription
             return cell
         }
         if indexPath.row == 1 {
@@ -151,6 +155,12 @@ extension HikeDetailsController: UITableViewDelegate {
 
 
 class WeatherTableCell: UITableViewCell {
+    
+    @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var currentTemp: UILabel!
+    @IBOutlet weak var currentTempRange: UILabel!
+    @IBOutlet weak var currentWeatherDesc: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

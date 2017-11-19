@@ -101,8 +101,10 @@ extension HikeManagerViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedHike = filteredHikes[indexPath.row]
+        print(selectedHike)
         tableView.deselectRow(at: indexPath, animated: true)
         searchBar.resignFirstResponder()
+        self.performSegue(withIdentifier: "HikeDetailsViewController", sender: self)
     }
     
 }

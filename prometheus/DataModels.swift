@@ -31,23 +31,27 @@ class CurrentWeather {
     let weatherTime: Double
     
     init(_ currentWeatherJSON: JSON) {
-        self.sunrise = currentWeatherJSON["sys"]["sunrise"].double!
-        self.sunset = currentWeatherJSON["sys"]["sunset"].double!
-        self.weatherMain = currentWeatherJSON["weather"][0]["main"].string!
-        self.weatherDescription = currentWeatherJSON["weather"][0]["description"].string!
-        self.weatherIcon = currentWeatherJSON["weather"][0]["icon"].string!
-        self.temperature = currentWeatherJSON["main"]["temp"].double!
-        self.humidity = currentWeatherJSON["main"]["humidity"].double!
-        self.pressure = currentWeatherJSON["main"]["pressure"].double!
-        self.tempatureMin = currentWeatherJSON["main"]["temp_min"].double!
-        self.temperatureMax = currentWeatherJSON["main"]["temp_max"].double!
-        self.windSpeed = currentWeatherJSON["wind"]["speed"].double!
-        self.windDirection = currentWeatherJSON["wind"]["deg"].double!
-        self.rain3h = currentWeatherJSON["rain"]["3h"].double!
-        self.cloudCoverage = currentWeatherJSON["clouds"]["all"].double!
-        self.weatherCity = currentWeatherJSON["name"].string!
-        self.weatherTime = currentWeatherJSON["dt"].double!
+        self.sunrise = currentWeatherJSON["sys"]["sunrise"].double ?? 0
+        self.sunset = currentWeatherJSON["sys"]["sunset"].double ?? 0
+        self.weatherMain = currentWeatherJSON["weather"][0]["main"].string ?? ""
+        self.weatherDescription = currentWeatherJSON["weather"][0]["description"].string ?? ""
+        self.weatherIcon = currentWeatherJSON["weather"][0]["icon"].string ?? ""
+        self.temperature = currentWeatherJSON["main"]["temp"].double ?? 0
+        self.humidity = currentWeatherJSON["main"]["humidity"].double ?? 0
+        self.pressure = currentWeatherJSON["main"]["pressure"].double ?? 0
+        self.tempatureMin = currentWeatherJSON["main"]["temp_min"].double ?? 0
+        self.temperatureMax = currentWeatherJSON["main"]["temp_max"].double ?? 0
+        self.windSpeed = currentWeatherJSON["wind"]["speed"].double ?? 0
+        self.windDirection = currentWeatherJSON["wind"]["deg"].double ?? 0
+        self.rain3h = currentWeatherJSON["rain"]["3h"].double ?? 0
+        self.cloudCoverage = currentWeatherJSON["clouds"]["all"].double ?? 0
+        self.weatherCity = currentWeatherJSON["name"].string ?? ""
+        self.weatherTime = currentWeatherJSON["dt"].double ?? 0
         
+    }
+    
+    func temperatureFahrenheit(_ temperatureKelvin: Double) -> Double {
+        return temperatureKelvin * (9/5) - 459.67
     }
 }
 

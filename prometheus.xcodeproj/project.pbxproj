@@ -723,7 +723,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C893D132BEB23E95A75F04F2 /* Pods-prometheus.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 5SREPW8963;
 				INFOPLIST_FILE = prometheus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -737,7 +737,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 56F764C58F44BE2ABDB35994 /* Pods-prometheus.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 5SREPW8963;
 				INFOPLIST_FILE = prometheus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

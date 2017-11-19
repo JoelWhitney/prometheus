@@ -15,6 +15,7 @@ class MainHikeDetailsViewController: SlidingPanelViewController {
     var hike: Hike? {
         didSet {
             print("mhdVC hike set")
+            print(hike!)
         }
     }
     
@@ -32,7 +33,7 @@ class MainHikeDetailsViewController: SlidingPanelViewController {
         mapViewController.hike = hike
         hikeDetailsViewController.hike = hike
     }
-
+    
     override var slidingPanelFullHeight: CGFloat {
         return super.slidingPanelFullHeight
     }
@@ -50,3 +51,4 @@ class MainHikeDetailsViewController: SlidingPanelViewController {
     
     
 }
+

@@ -11,6 +11,7 @@ import SwiftyJSON
 import GooglePlaces
 import Mapbox
 import ArcGIS
+import AWSDynamoDB
 
 class CurrentWeather {
     let sunrise: Double
@@ -52,6 +53,36 @@ class CurrentWeather {
     
     func temperatureFahrenheit(_ temperatureKelvin: Double) -> Double {
         return temperatureKelvin * (9/5) - 459.67
+    }
+}
+
+class AWSHike: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+    
+    var _userId: String?
+    var _hikeEntryId: String?
+    var _hike: [String: String]?
+    
+    class func dynamoDBTableName() -> String {
+        
+        return "prometheus-mobilehub-1340123780-hikes"
+    }
+    
+    class func hashKeyAttribute() -> String {
+        
+        return "_userId"
+    }
+    
+    class func rangeKeyAttribute() -> String {
+        
+        return "_hikeEntryId"
+    }
+    
+    override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
+        return [
+            "_userId" : "userId",
+            "_hikeEntryId" : "hikeEntryId",
+            "_hike" : "hike",
+        ]
     }
 }
 

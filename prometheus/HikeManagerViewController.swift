@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import AWSAuthCore
+import AWSAuthUI
+import AWSDynamoDB
 
 class HikeManagerViewController: UIViewController, isAbleToPassNewHike {
     var filterHandler: ((String?) -> Void)?
@@ -29,9 +32,41 @@ class HikeManagerViewController: UIViewController, isAbleToPassNewHike {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
     
+    @IBAction func handleLogout() {
+        if (AWSSignInManager.sharedInstance().isLoggedIn) {
+            AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
+                AWSAuthUIViewController
+                    .presentViewController(with: self.navigationController!,
+                                           configuration: nil,
+                                           completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+                                            if error != nil {
+                                                print("Error occurred: \(String(describing: error))")
+                                            } else {
+                                                // Sign in successful.
+                                            }
+                    })
+            })
+            // print("Logout Successful: \(signInProvider.getDisplayName)");
+        } else {
+            assert(false)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fetchHikes()
+            
+        if !AWSSignInManager.sharedInstance().isLoggedIn {
+            AWSAuthUIViewController
+                .presentViewController(with: self.navigationController!,
+                                       configuration: nil,
+                                       completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+                                        if error != nil {
+                                            print("Error occurred: \(String(describing: error))")
+                                        } else {
+                                            // Sign in successful.
+                                        }
+                })
+        }
     }
     
     func passHike(hike: Hike) {

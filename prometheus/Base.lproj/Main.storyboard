@@ -766,6 +766,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hike Manager" id="1sz-4u-h8f">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="qLG-nM-E7L">
+                            <connections>
+                                <action selector="handleLogout" destination="zUX-G1-XyT" id="ke7-lV-Nqi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="qlp-iF-riB">
                             <connections>
                                 <segue destination="nZZ-SY-nIl" kind="presentation" identifier="AddHikeViewController" id="y4l-HU-VCV"/>
